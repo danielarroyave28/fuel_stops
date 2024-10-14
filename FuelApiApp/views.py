@@ -7,8 +7,13 @@ from .algo import FuelRouteOptimizer
 from .serializers import RouteInputSerializer
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+import os
 
-key = "pk.eyJ1IjoiZGFuaWVsYXJybzIiLCJhIjoiY20yNHpzeGw0MGx2NTJxbzhsNXQzeXN5YiJ9.zl_ciqHpyiknIfGmaPY5jg"
+load_dotenv()
+
+
+key = os.getenv("key")
 
 # Create your views here.
 @api_view(['GET', 'POST'])
