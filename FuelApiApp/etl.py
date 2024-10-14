@@ -2,8 +2,15 @@ import pandas as pd
 import requests
 from urllib.parse import quote
 import time
+from dotenv import load_dotenv
 
-api_key = "AIzaSyCN-oW6o4uBIqYm6StU-UQ4oPQcPEQVGcg"
+import os
+load_dotenv()
+
+
+
+
+api_key = os.getenv("api_key")
 
 def clean_dataframe(filename: str) -> pd.DataFrame:
     df = pd.read_csv(filename)
